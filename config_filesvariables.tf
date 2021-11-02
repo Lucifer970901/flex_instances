@@ -31,7 +31,7 @@ variable "vcn_dns_label" {
 }
 variable "vcn_display_name"{
 description = "provide a display name for the vcn"
-default= "Sample_VCN"
+default= "test_VCN"
 }
 
 
