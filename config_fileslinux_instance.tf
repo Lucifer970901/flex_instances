@@ -1,7 +1,7 @@
 
 #declare the resources for linux instance
 resource "oci_core_instance" "linux" {
-  count               = "1"
+  count               = "2"
  availability_domain = "${lookup(data.oci_identity_availability_domains.ADs.availability_domains[0],"name")}"
  compartment_id      = "${var.compartment_ocid}"
   display_name        = "${var.instance_name}"
@@ -42,7 +42,7 @@ availability_domain = "${lookup(data.oci_identity_availability_domains.ADs.avail
 }
 
 resource "oci_core_volume_attachment" "linux" {
-  count           = "1"
+  count           = "2"
   attachment_type = "iscsi"
   compartment_id  = "${var.compartment_ocid}"
 #  instance_id     = "${oci_core_instance.linux[count.index].id}"
